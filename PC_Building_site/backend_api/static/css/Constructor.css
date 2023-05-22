@@ -1,0 +1,191 @@
+.constructBase{
+    width: 100%;
+    /* max-width: 1900px; */
+    margin-left: auto;
+    margin-right: auto;
+    display:flex;
+    /* align-items: center; */
+    justify-content: space-around;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+    margin-top:30px;
+   
+}
+
+.configuratorInfo{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.choiceComponents{
+    /* s */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right:20px;
+    min-width: 750px;
+    background-color: #131313;
+    border: 2px solid #131313;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 5px black;
+    margin-bottom: 20px;
+
+    
+}
+
+.componentSection{
+    display:flex;
+    justify-content: space-between;
+    margin-top:10px;
+}
+
+.componentSectionSpecial{
+    display: flex;
+    justify-content: space-between;
+    /* margin-top: 20px; */
+}
+
+.selectWrapper{
+    align-self:center;
+}
+
+
+select{
+    border:2px solid #9932CC;
+    align-self: center;
+    border-radius: 10px;
+    color:#9932CC;
+    text-align: center;
+    font-size: 20px;
+    background-color: black;
+    width: 450px;
+}
+
+select:hover{
+    cursor: pointer;
+}
+
+
+option{
+    color:#F664AF;
+    cursor:pointer;
+}
+option:hover{
+    cursor: pointer;
+    background-color: gray;
+    
+}
+
+.ramStyle{
+    width:100%;
+    min-width:70px;
+}
+
+.btnBlock{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding-top:10px;
+}
+
+button{
+    display: inline-block;	
+	box-sizing: border-box;
+	padding: 0 24px;
+	margin: 0 15px 15px 0;
+	outline: none;
+	border: 1px solid #F664AF;    
+	border-radius: 10px;
+	height: 37px;
+	line-height: 37px;
+	font-size: 25px; 
+	font-weight: normal;
+	text-decoration: none;
+	color: #F664AF;
+	background-color: black;
+	cursor: pointer;
+	touch-action: manipulation;
+}
+
+button:hover {
+	box-shadow: 0 1px 1px 0  #F664AF, 0 2px 5px 0  #F664AF;
+    transition-duration: 1s;
+}
+
+.userAssembly{
+    display:flex;
+    flex-direction:column;
+    min-width:600px;
+    /* max-width:1400px; */
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #131313;
+    border: 2px solid #131313;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 5px black;
+    margin-bottom: 20px;
+
+}
+
+.compImg{
+    padding-top: 20px;
+    height: 400px;
+    width: 500px;
+    align-self: center;
+    
+}
+
+.assemblyInfo{
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.totalPrice{
+    text-align: center;
+}
+
+.helpInfo{
+    text-align:center
+}
+
+p, li{
+    color: #9932CC;
+    font-size: 25px;
+    font-family:  sans-serif;
+}
+
+span{
+    color: #F664AF;
+}
+
+h2{
+    font-size: 25px;
+    font-family:  sans-serif;
+    color: #F664AF;
+    text-align: center;
+}
+
+h1{
+    color: #FFBA00;
+    font-size: 35px;
+    font-family:  sans-serif;
+    text-align: center;
+}
+
+hr{
+    color:#9932CC;
+    background-color:#9932CC; 
+    border-color: #9932CC;
+}
+
+summary{
+    color:#9932CC;
+}
+
+img{
+    width:100%;
+    height: 100%;
+    border:3px solid rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+}

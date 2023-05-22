@@ -1,0 +1,95 @@
+.sectionBase{
+    height:100%;
+
+}
+
+.formLogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: #131313;
+    margin-top: 200px;
+    margin-bottom: auto;
+    max-width: 500px;
+    min-height: 300px;
+    box-shadow: 0 0 10px 5px black;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.loginInfo{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+label{
+    font-family: sans-serif;
+    font-size: 25px;
+    color:#9932CC;
+}
+
+input{
+    background-color: #151719;
+    color:#F664AF;
+    font-family: sans-serif;
+    font-size: 25px;
+    border: 1px solid #9932CC;
+    border-radius: 10px;
+}
+
+h1{
+    font-family: sans-serif;
+    font-size: 30px;
+    color:#F664AF;
+    text-align: center;
+}
+
+button{
+    display: inline-block;	
+	box-sizing: border-box;
+	padding: 0 24px;
+	margin: 0 15px 15px 0;
+	outline: none;
+	border: 1px solid #F664AF;    
+	border-radius: 10px;
+	height: 37px;
+	line-height: 37px;
+	font-size: 25px; 
+	font-weight: normal;
+	text-decoration: none;
+	color: #F664AF;
+	background-color: black;
+	cursor: pointer;
+	touch-action: manipulation;
+}
+
+button:hover {
+	box-shadow: 0 1px 1px 0  #F664AF, 0 2px 5px 0  #F664AF;
+    transition-duration: 1s;
+}
+
+.errorMessage{
+    color: red;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.register{
+    font-family: sans-serif;
+    font-size: 20px;
+    color:#9932CC;
+    text-align: center;
+}
+
+.registrationHref{
+    font-family: sans-serif;
+    text-align: center;
+    color:#F664AF;
+    font-size:25px;
+    text-decoration:none;
+    margin-bottom:10px;
+}

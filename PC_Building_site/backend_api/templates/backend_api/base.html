@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static "css/base.css" %}" />
+    {% block style %}
+        base style
+    {% endblock %}
+    <meta charset="UTF-8">
+    <title>Configurator</title>
+</head>
+<body>
+    <header class="headerbase">
+            <div class="warplogo">
+                <img class ="logo" src="{% static "images/favicon.png" %}">
+            </div>
+            <nav>
+                <div class="navobject">
+                    <a href="{% url 'backend_api:index' %}" class="navtext">Главная</a>
+                </div>
+                <div class="navobject">
+                    <a href="{% url 'backend_api:constructor' %}" class="navtext">Конфигуратор</a>
+                </div>
+                <div class="navobject">
+                    <a href="{% url 'backend_api:help' %}" class="navtext">Полезная информация</a>
+                </div>
+                {% if request.user.is_authenticated %}
+                    <div class="navobject">
+                    <a href="{% url 'myauth:about-me' %}" class="navtextUser">{{ request.user.username }}</a>
+                </div>
+                {% else %}
+                <div class="navobject">
+                    <a href="{% url 'myauth:login' %}" class="navtextUser">Войти</a>
+                </div>
+                {% endif %}
+            </nav>
+    </header>
+    <div class="wrapper">
+        {% block body %}
+        Base body
+        {% endblock %}
+    <div>
+            <footer>
+                <p class="footertext">2023 MIREA | All Rights Reserved</p>
+            </footer>
+    </div>
+    </div>
+   
+</body>
+</html>

@@ -1,0 +1,214 @@
+{% extends 'backend_api/base.html' %}
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Конфигуратор</title>
+    {% block style %}
+    <link rel="stylesheet" href="{% static "css/Constructor.css" %}" />
+    {% endblock %}
+</head>
+<body>
+    {% block body %}
+    <h1>Конфигуратор</h1>
+    <div class="configuratorInfo">
+        <p>Для тех, кто знает характеристики компонентов и хочет посмотреть стоимость,
+            ниже приведен конфигуратор для подчета стоимости сборки</p>
+    </div>
+    <div class="constructBase">
+        <div class="choiceComponents">
+            <h2>Выберите компоненты сборки:</h2>
+            <form action="{% url 'backend_api:constructor' %}" method="post">
+                {% csrf_token %}
+                <div class="componentSection">
+                    <p>Процессор: </p>
+                    <div class="selectWrapper">
+                        <select name="processor">
+                            <option>Не выбрано</option>
+                            {% for processor in processors %}
+                                <option>{{ processor.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    
+                </div>
+                
+                <!-- <button type="submit" name="info" value="1">Характеристики</button> -->
+                <hr>
+                <div class="componentSection">
+                    <p>Система охлаждения:  </p>
+                    <div class="selectWrapper">
+                        <select name="cooling_system">
+                            <option>Не выбрано</option>
+                            {% for cooling_system in cooling_systems %}
+                                <option>{{ cooling_system.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                
+                <hr>
+
+                <div class="componentSection">
+                    <p>Материнская плата: </p>
+                    <div class="selectWrapper">
+                        <select name="motherboard">
+                            <option>Не выбрано</option>
+                            {% for motherboard in motherboards %}
+                                <option>{{ motherboard.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                
+                <hr>
+
+                <div class="componentSection">
+                    <p>Оперативная память: </p>
+                    <div class="selectWrapper">
+                        <select name="ram">
+                            <option>Не выбрано</option>
+                            {% for ram in rams %}
+                                <option>{{ ram.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="componentSectionSpecial">  
+                    <p>Количество плашек: </p>
+                    <div class="selectWrapper">
+                        <select name="ram_count" class="ramStyle">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>4</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <hr>
+
+                <div class="componentSection">
+                    <p>Видеокарта: </p>
+                    <div class="selectWrapper">
+                        <select name="videocard">
+                            <option>Не выбрано</option>
+                            {% for videocard in videocards %}
+                                <option>{{ videocard.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                
+                <hr>
+
+                <div class="componentSection">
+                    <p>Жесткий диск: </p>
+                    <div class="selectWrapper">
+                        <select name="hdd">
+                            <option>Не выбрано</option>
+                            {% for hdd in hdds %}
+                                <option>{{ hdd.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                
+                <hr>
+
+                <div class="componentSection">
+                    <p>SSD: </p>
+                    <div class="selectWrapper">
+                        <select name="ssd">
+                            <option>Не выбрано</option>
+                            {% for ssd in ssds %}
+                                <option>{{ ssd.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                
+                <hr>
+
+                <div class="componentSection">
+                    <p>Блок питания: </p>
+                    <div class="selectWrapper">
+                        <select name="power_unit">
+                            <option>Не выбрано</option>
+                            {% for prower_unit in power_units %}
+                                <option>{{ prower_unit.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                
+                <hr>
+                <div class="btnBlock">
+                    <button type="submit">Рассчитать стоимость сборки</button>
+                </div>
+            </form>
+        </div>
+
+
+
+        <div class="userAssembly">
+            <div class="compImg">
+                <img src="{% static "images/ComputerAssembly.jpg" %}" alt="Компьютер">
+            </div>
+            
+        {% if request.POST %}
+        <div class="assemblyInfo">
+            <h2>Ваша сборка</h2>
+            <ul>
+                <li>Процессор: {{ request.POST.processor }}</li>
+                <!-- <details>
+                <summary>Характеристики</summary>
+                <ul>
+                    {% for key, value in user_choice.items %}
+                    <li>{{ key }} {{ value }}</li>
+                    {% endfor %}
+                </ul>
+                
+                </details> -->
+                <li>Система охлаждения: {{ request.POST.cooling_system }}</li>
+                <li>Материнская плата: {{ request.POST.motherboard }}</li>
+                <li>Оперативная память: {{ request.POST.ram }}</li>
+                <li>Количество плашек оперативной памяти: {{ request.POST.ram_count }}</li>
+                <li>Видеокарта: {{ request.POST.videocard }}</li>
+                <li>Жесткий диск: {{ request.POST.hdd }}</li>
+                <li>SSD: {{ request.POST.ssd }}</li>
+                <li>Блок питания: {{ request.POST.power_unit }}</li>
+            </ul>
+            
+            <h2>Общая стоимость:</h2>
+            <p class="totalPrice">{{ total_price }} руб.</p>
+        </div>
+            
+        {% else %}
+        <div class="assemblyInfo">
+            <h2>Ваша сборка</h2>
+            <ul>
+                <li>Процессор: Процессор не выбран</li>
+                <li>Система охлаждения: Система охлаждения не выбрана</li>
+                <li>Материнская плата: Материнская плата не выбрана</li>
+                <li>Оперативная память: Оперативная память не выбрана</li>
+                <li>Количество плашек: Неизвестно</li>
+                <li>Видеокарта: Видеокарта не выбрана</li>
+                <li>Жесткий диск: Жесткий диск не выбран</li>
+                <li>SSD: SSD не выбран</li>
+                <li>Блок питания: Блок питания не выбран</li>
+            </ul>
+            <h2>Общая стоимость:</h2>
+            <p class="totalPrice">Неизвестна</p>
+        </div>
+        {% endif %}
+        </div>
+        <div class="helpInfo">
+            <p>Подробная информация о всех доступных коплектующих представлена
+                 в разделе <span>"Полезная информация"</span></p>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

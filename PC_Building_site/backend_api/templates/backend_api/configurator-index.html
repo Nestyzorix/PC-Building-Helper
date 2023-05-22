@@ -1,0 +1,49 @@
+{% extends 'backend_api/base.html' %}
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Configurator</title>
+    {% block style %}
+    <link rel="stylesheet" href="{% static "css/Main.css" %}" />
+    {% endblock %}
+</head>
+<body>
+    {% block body %}
+        <div>
+            <div class="contentBlock">
+                <h1>Конфигуратор ПК</h1>
+                <p class="text">
+                Собрать компьютер самому - это непросто, но реально.
+                </p>
+                <p class="text">
+                Если вы не желаете пользоваться услугами консультантов,
+                на помощь придет онлайн-конфигуратор. Это простой сервис,
+                с помощью которого можно собрать ПК с нуля.
+                </p>
+                <a href="{% url 'backend_api:constructor' %}" class="button">Начать сборку!</a>
+            </div>
+           
+        </div>
+
+
+         <div>
+            <div>
+                <h2>Не знаете как правильно собрать?</h2>
+                <p class="text2">
+                    Для помощи в сборке компьютера есть раздел
+                    <span> "Полезная информация"</span>.
+                </p>
+                <p class="text2">
+                    В нем вы можете ознакомиться с основными правилами
+                    выбора компонентов и найти полезные советы.
+                </p>
+            </div>
+        </div>
+
+
+    {% endblock %}
+</body>
+</html>

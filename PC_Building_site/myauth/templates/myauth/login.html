@@ -1,0 +1,51 @@
+{% extends 'myauth/base.html' %}
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    {% block style %}
+        <link rel="stylesheet" href="{% static "css/login.css" %}" />
+    {% endblock %}
+</head>
+<body>
+{% block body %}
+    <div class="sectionBase">
+        <div class="formLogin">
+            <form method="post">
+                {% csrf_token %}
+        
+                <h1>Login</h1>
+                <div class="loginInfo">
+                    <div class="dataInput">
+                        <p>
+                            <label for="username">Username:</label>
+                            <input type="text" id="username" name="username" required>
+                        </p>
+                    </div>
+                    <div>
+                        <p class="dataInput">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required>
+                        </p>
+                    </div>
+                    {% if error %}
+                    <p class="errorMessage">
+                        {{ error }}
+                    </p>
+                    {% endif %}
+                <button type="submit">Login</button>
+                <p class="register">or</p>
+                <a href="{% url 'myauth:register' %}" class="registrationHref">Register</a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    
+{% endblock %}
+
+</body>
+</html>

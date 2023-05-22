@@ -1,0 +1,34 @@
+{% extends 'myauth/base.html' %}
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>О пользователе</title>
+    {% block style %}
+        <link rel="stylesheet" href="{% static "css/aboutMe.css" %}" />
+    {% endblock %}
+</head>
+<body>
+    {% block body %}
+        <div class="infoSection">
+            <h1>Информация о пользователе</h1>
+            <div class="infoData">
+                {% if user.is_authenticated %}
+                <h2>Детали</h2>
+                <p>Username: {{ user.username }}</p>
+{#                <p>First name: {{ user.first_name }}</p>#}
+{#                <p>Last name: {{ user.last_name }}</p>#}
+{#                <p>Email: {{ user.email }}</p>#}
+                <a href="{% url 'myauth:logout' %}" class="logout">Logout</a>
+            {% else %}
+                <h2>Пользователь анонимен</h2>
+            {% endif %}
+            </div>
+            
+        </div>
+    {% endblock %}
+
+</body>
+</html>

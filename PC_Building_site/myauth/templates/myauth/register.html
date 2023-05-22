@@ -1,0 +1,32 @@
+{% extends 'myauth/base.html' %}
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    {% block style %}
+        <link rel="stylesheet" href="{% static "css/login.css" %}" />
+        <link rel="stylesheet" href="{% static "css/registration.css" %}" />
+    {% endblock %}
+</head>
+<body>
+    {% block body %}
+        <div class="registerInfo">
+            <form method="post">
+                <h1>Register</h1>
+                {% csrf_token %}
+                <div class="">
+                    {{ form.as_p }}
+                    <div class="buttonBlock">
+                        <input type="submit" value="register" class="registerBtn">
+                    </div>
+                    
+                </div>
+                
+            </form>
+        </div>
+    {% endblock %}
+</body>
+</html>
