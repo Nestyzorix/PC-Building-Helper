@@ -14,17 +14,11 @@ def configurator_index(request):
 def configurator_constructor(request):
     total_price = 0
     post_data = {}
-    # user_choice = {}
     if request.method == "POST":
         post_data = request.POST
         for item in Processor.objects.all():
             if post_data['processor'] == item.name:
                 total_price += item.price
-                # user_choice['Производитель: '] = item.firm
-                # user_choice['Тактовая частота: '] = item.frequency
-                # user_choice['Сокет: '] = item.socket
-                # user_choice['Количество ядер: '] = item.core_number
-                # user_choice['Цена: '] = item.price
 
         for item in CoolingSystem.objects.all():
             if post_data['cooling_system'] == item.name:
