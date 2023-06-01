@@ -2,11 +2,11 @@
     margin:0;
     background-image: url("../images/ComputerFinal.jpg");
     background-position: center;
-    /* background-color:gray; */
     width: 100%;
     max-width: 1800px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 3%;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -82,8 +82,24 @@ span{
     font-family: sans-serif;
     color:blueviolet;
     font-size:30px;
-    text-align: center;
-    margin: 0 auto 0.5rem;
-    max-width: 42.4375rem;
+    /*text-align: center;*/
+    margin: 0 auto 2rem;
+    max-width: 64.4375rem;
     padding-bottom: 20px;
+}
+
+.helpBlock{
+    margin-bottom:5%;
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color:#131313;
+    box-shadow: 0 0 10px 5px black;
 }
