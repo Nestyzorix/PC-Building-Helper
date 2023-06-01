@@ -1,15 +1,9 @@
 .constructBase{
-    width: 100%;
-    /* max-width: 1900px; */
-    margin-left: auto;
-    margin-right: auto;
     display:flex;
-    /* align-items: center; */
     justify-content: space-around;
     flex-wrap:wrap;
     margin-bottom:30px;
     margin-top:30px;
-   
 }
 
 .configuratorInfo{
@@ -19,7 +13,6 @@
 }
 
 .choiceComponents{
-    /* s */
     margin-left: auto;
     margin-right: auto;
     padding-left: 20px;
@@ -41,7 +34,6 @@
 .componentSectionSpecial{
     display: flex;
     justify-content: space-between;
-    /* margin-top: 20px; */
 }
 
 .selectWrapper{
@@ -115,7 +107,6 @@ button:hover {
     display:flex;
     flex-direction:column;
     min-width:600px;
-    /* max-width:1400px; */
     margin-left: auto;
     margin-right: auto;
     background-color: #131313;

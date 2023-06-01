@@ -31,7 +31,8 @@ summary:hover{
 
 
 .componentsBlock{
-  margin-left: 60px;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .componentsBase{
@@ -83,7 +84,7 @@ p{
 }
 
 .articleBlock{
-  margin: 20px 60px 20px 60px;
+  margin: 20px 10% 20px 10%;
 }
 
 .arcticleParagraph{
