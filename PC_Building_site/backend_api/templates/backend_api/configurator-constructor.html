@@ -76,16 +76,16 @@
                         </select>
                     </div>
                 </div>
-                <div class="componentSectionSpecial">  
-                    <p>Количество плашек: </p>
-                    <div class="selectWrapper">
-                        <select name="ram_count" class="ramStyle">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>4</option>
-                        </select>
-                    </div>
-                </div>
+{#                <div class="componentSectionSpecial">  #}
+{#                    <p>Количество плашек: </p>#}
+{#                    <div class="selectWrapper">#}
+{#                        <select name="ram_count" class="ramStyle">#}
+{#                            <option>1</option>#}
+{#                            <option>2</option>#}
+{#                            <option>4</option>#}
+{#                        </select>#}
+{#                    </div>#}
+{#                </div>#}
                 
                 <hr>
 
@@ -174,7 +174,6 @@
                 <li>Система охлаждения: {{ request.POST.cooling_system }}</li>
                 <li>Материнская плата: {{ request.POST.motherboard }}</li>
                 <li>Оперативная память: {{ request.POST.ram }}</li>
-                <li>Количество плашек оперативной памяти: {{ request.POST.ram_count }}</li>
                 <li>Видеокарта: {{ request.POST.videocard }}</li>
                 <li>Жесткий диск: {{ request.POST.hdd }}</li>
                 <li>SSD: {{ request.POST.ssd }}</li>
@@ -193,7 +192,6 @@
                 <li>Система охлаждения: Система охлаждения не выбрана</li>
                 <li>Материнская плата: Материнская плата не выбрана</li>
                 <li>Оперативная память: Оперативная память не выбрана</li>
-                <li>Количество плашек: Неизвестно</li>
                 <li>Видеокарта: Видеокарта не выбрана</li>
                 <li>Жесткий диск: Жесткий диск не выбран</li>
                 <li>SSD: SSD не выбран</li>
