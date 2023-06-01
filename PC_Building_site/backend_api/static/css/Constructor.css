@@ -30,8 +30,6 @@
     border-radius: 20px;
     box-shadow: 0 0 10px 5px black;
     margin-bottom: 20px;
-
-    
 }
 
 .componentSection{
@@ -143,10 +141,6 @@ button:hover {
 
 .totalPrice{
     text-align: center;
-}
-
-.helpInfo{
-    text-align:center
 }
 
 p, li{
