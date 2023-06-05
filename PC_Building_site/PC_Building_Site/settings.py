@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 
 from django.urls import reverse_lazy
+import os
+import dj_database_url
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,13 +25,23 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-1+^g4a&7hr2*o7l(c@jd3hhgej0lmiuoj78hb7fp)2av83si)%'
+
+
+# SECRET_KEY = 'django-insecure-1+^g4a&7hr2*o7l(c@jd3hhgej0lmiuoj78hb7fp)2av83si)%'
+SECRET_KEY = os.environ.get("SECRET_KEY", "fwehf39fo")
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+
+
+# DEBUG = False
+DEBUG = 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = []
 
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Application definition
 
@@ -87,15 +100,20 @@ WSGI_APPLICATION = 'PC_Building_Site.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'PC_Helper',
+#         'USER': 'postgres',
+#         'PASSWORD': 'rootpass',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'PC_Helper',
-        'USER': 'postgres',
-        'PASSWORD': 'rootpass',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.parse('postgres://pchelper_user:QvdjVrIn5IuQpDIEeqhJUTASUczfApmd@dpg-chut3am7avj345f0a2u0-a.oregon-postgres.render.com/pchelper')
+
 }
 
 
