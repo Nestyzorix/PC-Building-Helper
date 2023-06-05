@@ -35,7 +35,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "fwehf39fo")
 
 
 # DEBUG = False
-DEBUG = 'RENDER' not in os.environ
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
