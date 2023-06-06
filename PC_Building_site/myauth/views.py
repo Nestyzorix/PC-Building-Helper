@@ -32,7 +32,7 @@ class RegisterView(CreateView):
 def login_view(request: HttpRequest):
     if request.method == 'GET':
         if request.user.is_authenticated:
-            return redirect('/main/')
+            return redirect('/')
 
         return render(request, 'myauth/login.html')
 
@@ -42,7 +42,7 @@ def login_view(request: HttpRequest):
     user = authenticate(request, username=username, password=password)
     if user is not None:
         login(request, user)
-        return redirect('/main/')
+        return redirect('/')
 
     return render(request, 'myauth/login.html', {'error': 'Указаны неверные данные'})
 
