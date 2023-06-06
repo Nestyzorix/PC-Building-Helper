@@ -1,9 +1,5 @@
-# from rest_framework.views import APIView
-# from .serializer import ProcessorSerializer
-# from rest_framework.response import Response
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import *
 from .forms import *
 
 
@@ -58,9 +54,7 @@ def configurator_constructor(request):
         "ssds": SSD.objects.all(),
         "power_units": PowerUnit.objects.all(),
 
-        # "form": form,
         "total_price": total_price,
-        # "user_choice": user_choice,
 
     }
 
@@ -79,19 +73,3 @@ def configurator_help(request):
         "power_units": PowerUnit.objects.all(),
     }
     return render(request, 'backend_api/configurator-help.html', context=context)
-
-#
-# class ProcessorView(APIView):
-#
-#     def get(self, request):
-#         output = [
-#             {
-#                 "name": output.name,
-#                 "firm": output.firm,
-#                 "frequency": output.frequency,
-#                 "soket": output.soket,
-#                 "core_number": output.core_number,
-#                 "price": output.price
-#             } for output in Processor.objects.all()
-#         ]
-#         return Response(output)
