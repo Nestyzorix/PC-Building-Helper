@@ -30,12 +30,7 @@ def configurator_constructor(request):
 
         for item in RAM.objects.all():
             if post_data['ram'] == item.name:
-                if post_data['ram_count'] == 4:
-                    total_price += item.price * 4
-                elif post_data['ram_count'] == 2:
-                    total_price += item.price * 2
-                else:
-                    total_price += item.price
+                total_price += item.price
 
         for item in Videocard.objects.all():
             if post_data['videocard'] == item.name:
